@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 30rem;
+    width: 100%;
+    border: 1px solid black;
+    min-height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.botao {
+    padding: 1rem;
+    transition: .2s;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.botao:hover {
+    transform: scale(1.2);
+}
+
+.saida {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.jogador, .computador {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.saida div {
+    width: 8rem;
+    text-align: center;
+}
