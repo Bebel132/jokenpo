@@ -62,7 +62,6 @@ document.querySelectorAll(".botao").forEach(i => {
         jEmoji.innerHTML = "";
         cEmoji.innerHTML = "";
         resultado.innerHTML = "";
-        let timeC = ((Math.floor(Math.random()*3)+1)*1000)+4000;
 
         setTimeout(() => {
             resultado.append(document.createTextNode("pedra, "));
@@ -111,6 +110,6 @@ document.querySelectorAll(".botao").forEach(i => {
             document.querySelectorAll(".botao").forEach(e => {
                 e.disabled = false;
             })
-        }, timeC + 10);
+        }, 4500);
     })
 })
