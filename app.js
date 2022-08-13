@@ -79,7 +79,7 @@ document.querySelectorAll(".botao").forEach(i => {
                     }, 1000);
                 }, 1000);
             }, 1000);
-        }, 1000);
+        }, 500);
 
         setTimeout(() => {
             resultado.innerHTML = "";
