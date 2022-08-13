@@ -56,7 +56,7 @@ document.querySelectorAll(".botao").forEach(i => {
             e.disabled = true;
         });
 
-        document.querySelector(".saida").style.visibility = "visible";
+        document.querySelector(".saida").style.visibility = "visible ";
         c =  Math.floor(Math.random()*3)+1;
         j = parseInt(i.value);
         jEmoji.innerHTML = "";
