@@ -52,47 +52,65 @@ const resultado = document.querySelector(".resultado");
 
 document.querySelectorAll(".botao").forEach(i => {
     i.addEventListener("click", () => {
+        document.querySelectorAll(".botao").forEach(e => {
+            e.disabled = true;
+        });
+
+        document.querySelector(".saida").style.display = "flex";
         c =  Math.floor(Math.random()*3)+1;
-        j = parseInt(i.value)
+        j = parseInt(i.value);
         jEmoji.innerHTML = "";
         cEmoji.innerHTML = "";
         resultado.innerHTML = "";
+        let timeC = ((Math.floor(Math.random()*3)+1)*1000)+4000;
 
-        if(j == 1){
-            jEmoji.append(document.createTextNode("✊"))
-        } else if(j == 2){
-            jEmoji.append(document.createTextNode("✋"))
-        } else if(j == 3){
-            jEmoji.append(document.createTextNode("✌️"))
-        }
+        setTimeout(() => {
+            resultado.append(document.createTextNode("pedra, "));
 
-        if(c == 1){
-            cEmoji.append(document.createTextNode("✊"))
-        } else if(c == 2){
-            cEmoji.append(document.createTextNode("✋"))
-        } else if(c == 3){
-            cEmoji.append(document.createTextNode("✌️"))
-        }
+            setTimeout(() => {
+                resultado.append(document.createTextNode("papel "));
+                
+                setTimeout(() => {
+                    resultado.append(document.createTextNode("e..."));
 
-        if(jokenpo(j, c) == "ganhou"){
-                    resultado.append(document.createTextNode("voce ganhou"))
-                } else if(jokenpo(j,c) == "perdeu") {
-                    resultado.append(document.createTextNode("voce perdeu"))
-                } else if(jokenpo(j,c) == "empate") {
-                    resultado.append(document.createTextNode("empate"))
-                }
+                    setTimeout(() => {
+                        resultado.innerHTML = "";
+                        resultado.append(document.createTextNode("pedra, papel e tesoura"));
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+
+        setTimeout(() => {
+            resultado.innerHTML = "";
+            if(j == 1){
+                jEmoji.append(document.createTextNode("✊"));
+            } else if(j == 2){
+                jEmoji.append(document.createTextNode("✋"));
+            } else if(j == 3){
+                jEmoji.append(document.createTextNode("✌️"));
+            }
+
+            if(c == 1){
+                cEmoji.append(document.createTextNode("✊"));
+            } else if(c == 2){
+                cEmoji.append(document.createTextNode("✋"));
+            } else if(c == 3){
+                cEmoji.append(document.createTextNode("✌️"));
+            }
+        }, timeC);
+
+        setTimeout(() => {
+            if(jokenpo(j, c) == "ganhou"){
+                resultado.append(document.createTextNode("voce ganhou"));
+            } else if(jokenpo(j,c) == "perdeu") {
+                resultado.append(document.createTextNode("voce perdeu"));
+            } else if(jokenpo(j,c) == "empate") {
+                resultado.append(document.createTextNode("empate"));
+            }
+            document.querySelectorAll(".botao").forEach(e => {
+                e.disabled = false;
+            })
+        }, timeC + 10);
     })
 })
-
-// for(let i = 0; i<=10; i++){
-//     j = Math.floor(Math.random()*3)+1;
-//     c = Math.floor(Math.random()*3)+1;
-//     if(jokenpo(j, c) == "ganhou"){
-//         console.log("ganhou")
-//     } else if(jokenpo(j,c) == "perdeu") {
-//         console.log("perdeu")
-//     } else if(jokenpo(j,c) == "empate") {
-//         console.log("empate")
-//     }
-//     console.log("\ncomputador "+c+"\njogador "+j+"\n")
-// }

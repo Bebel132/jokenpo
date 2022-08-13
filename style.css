@@ -37,6 +37,7 @@ body {
 
 .saida {
     width: 100%;
+    min-height: 2rem;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
