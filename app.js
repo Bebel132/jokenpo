@@ -82,7 +82,6 @@ document.querySelectorAll(".botao").forEach(i => {
         }, 500);
 
         setTimeout(() => {
-            resultado.innerHTML = "";
             if(j == 1){
                 jEmoji.append(document.createTextNode("✊"));
             } else if(j == 2){
@@ -98,9 +97,10 @@ document.querySelectorAll(".botao").forEach(i => {
             } else if(c == 3){
                 cEmoji.append(document.createTextNode("✌️"));
             }
-        }, timeC);
+        }, 3500);
 
         setTimeout(() => {
+            resultado.innerHTML = "";
             if(jokenpo(j, c) == "ganhou"){
                 resultado.append(document.createTextNode("voce ganhou"));
             } else if(jokenpo(j,c) == "perdeu") {
