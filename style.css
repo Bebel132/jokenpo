@@ -3,23 +3,34 @@
     padding: 0;
 }
 
+:root {
+    --cor-1: #0e153a;
+    --cor-2: #3d5af1;
+    --cor-3: #22d1ee;
+    --cor-4: #e2f3f5;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--cor-1);
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(61,90,241);
+background: linear-gradient(-315deg, rgba(61,90,241,1) 8%, rgba(34,209,238,1) 92%);
 }
 
 .container {
-    max-width: 30rem;
+    background-color: var(--cor-4);
+    max-width: 25rem;
     width: 100%;
-    border: 1px solid black;
+    border-radius: 10px;
     min-height: 20rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    margin: 0 1rem;
     padding: 0 1rem;
     text-align: center;
 }
@@ -29,10 +40,22 @@ body {
     transition: .2s;
     font-size: larger;
     cursor: pointer;
+    border: 1px solid var(--cor-1);
+    border-radius: 5px;
 }
 
 .botao:hover {
     transform: scale(1.2);
+}
+
+@media screen and (max-width: 800px) {
+    .botao:hover {
+        transform: none;
+    }
+
+    .botao:focus {
+        transform: scale((1.2));
+    }
 }
 
 .saida {
